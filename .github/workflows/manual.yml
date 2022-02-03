@@ -10,4 +10,4 @@ on:
 
 jobs:
   greet:
-    uses: ./.github/workflows/__template.yml
+    uses: prashant-gupta23/mslearn-tailspin-spacegame-web/.github/workflows/__template.yml@v1
