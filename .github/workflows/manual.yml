@@ -4,7 +4,6 @@ on:
   pull_request:
     paths:
       - "Tailspin.SpaceGame.Web/**"
-      - ".github/workflows/manual.yml"
   push:
     branches:
       - main
