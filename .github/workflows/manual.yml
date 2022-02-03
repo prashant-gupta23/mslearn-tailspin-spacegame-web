@@ -1,6 +1,15 @@
 name: Manual workflow
 
 on:
+  pull_request:
+    paths:
+      - ".github/workflows/manual.yml"
+  push:
+    branches:
+      - main
+      - 'release-**'
+    paths:
+      - ".github/workflows/manual.yml"
   workflow_dispatch:
 
 jobs:
