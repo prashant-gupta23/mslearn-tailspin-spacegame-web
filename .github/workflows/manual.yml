@@ -16,4 +16,4 @@ on:
 
 jobs:
   greet:
-    uses: .github/workflows/__template.yml@v1
+    uses: ./.github/workflows/__template.yml@v1
