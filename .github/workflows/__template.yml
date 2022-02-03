@@ -1,0 +1,11 @@
+name: template
+
+on:
+  workflow_call:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: amp cli login
+        run: echo "Hello World"

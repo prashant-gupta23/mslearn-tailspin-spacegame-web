@@ -1,0 +1,8 @@
+name: Manual workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  greet:
+    uses: ./.github/workflows/__template.yml
