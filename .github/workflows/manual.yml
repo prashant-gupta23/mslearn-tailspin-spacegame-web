@@ -1,6 +1,9 @@
 name: Manual workflow
 
 on:
+  pull_request:
+    paths:
+      - "Tailspin.SpaceGame.Web/**"
   push:
     branches:
       - main
