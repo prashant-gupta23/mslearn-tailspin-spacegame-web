@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "Tailspin.SpaceGame.Web/**"
+      - ".github/workflows/manual.yml"
   push:
     branches:
       - main
@@ -15,4 +16,4 @@ on:
 
 jobs:
   greet:
-    uses: ./.github/workflows/__template.yml
+    uses: prashant-gupta23/mslearn-tailspin-spacegame-web/.github/workflows/__template.yml@main
