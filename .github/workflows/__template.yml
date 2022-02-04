@@ -7,14 +7,21 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: nuget-token-replacement
-        uses: cschleiden/replace-tokens@v1.1        
-        with:
-          tokenPrefix: '{{'
-          tokenSuffix: '}}'
-          files: '["Tailspin.SpaceGame.Web\vars-test.tfvars"]'
-        env:
-          ACA_DB_USERNAME: ${{ secrets.ACA_DB_USERNAME }}
-          ACA_DB_PASSWORD: ${{ secrets.ACA_DB_PASSWORD }}
-      - name: amp cli login
-        run: echo "Hello World"
+     - uses: actions/checkout@v2
+ 
+     - name: echo-variables
+       run: |
+          echo  ${{ secrets.ACA_DB_USERNAME }}
+          echo  ${{ secrets.ACA_DB_PASSWORD }}
+
+     - name: nuget-token-replacement
+       uses: cschleiden/replace-tokens@v1.1        
+       with:
+         tokenPrefix: '{{'
+         tokenSuffix: '}}'
+         files: '["Tailspin.SpaceGame.Web\vars-test.tfvars"]'
+       env:
+         ACA_DB_USERNAME: ${{ secrets.ACA_DB_USERNAME }}
+         ACA_DB_PASSWORD: ${{ secrets.ACA_DB_PASSWORD }}
+     - name: amp cli login
+       run: echo "Hello World"
