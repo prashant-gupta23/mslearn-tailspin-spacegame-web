@@ -18,7 +18,7 @@ jobs:
        with:
          tokenPrefix: '{{'
          tokenSuffix: '}}'
-         files: '["Tailspin.SpaceGame.Web\vars-test.tfvars"]'
+         files: '["Tailspin.SpaceGame.Web/vars-test.tfvars"]'
        env:
          ACA_DB_USERNAME: ${{ secrets.ACA_DB_USERNAME }}
          ACA_DB_PASSWORD: ${{ secrets.ACA_DB_PASSWORD }}
