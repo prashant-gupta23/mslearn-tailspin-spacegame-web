@@ -8,11 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
- 
-     - name: echo-variables
-       run: |
-          echo  ${{ secrets.ACA_DB_USERNAME }}
-          echo  ${{ secrets.ACA_DB_PASSWORD }}
+     - run: 'echo "$SSH_KEY" > key'
+       shell: bash
+       env:
+         SSH_KEY: ${{secrets.ACA_DB_USERNAME}}
 
      - name: nuget-token-replacement
        uses: cschleiden/replace-tokens@v1.1        
