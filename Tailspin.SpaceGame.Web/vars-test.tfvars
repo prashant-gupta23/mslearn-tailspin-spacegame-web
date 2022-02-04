@@ -1,0 +1,10 @@
+location                   = "westeurope"
+resource_group             = "rgpazewrock-aca-test"
+server_name                = "rock-aca-test"
+sqladmpassword             = "{{ACA_DB_PASSWORD}}"
+sqladmuser                 = "{{ACA_DB_USERNAME}}"
+sqlserver_aad_group_owners = "prashant.gupta@maersk.com,vimal.sivasubramanian@maersk.com"
+name                       = "ACA"
+max_size_gb                = "2"
+sku_name                   = "Basic"
+zone_redundant             = false

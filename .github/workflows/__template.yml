@@ -1,0 +1,20 @@
+name: template
+
+on:
+  workflow_call:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: nuget-token-replacement
+        uses: cschleiden/replace-tokens@v1.1        
+        with:
+          tokenPrefix: '{{'
+          tokenSuffix: '}}'
+          files: '["cloud-infrastructure\environments\vars-test.tfvars"]'
+        env:
+          ACA_DB_USERNAME: ${{ secrets.ACA_DB_USERNAME }}
+          ACA_DB_PASSWORD: ${{ secrets.ACA_DB_PASSWORD }}
+      - name: amp cli login
+        run: echo "Hello World"
