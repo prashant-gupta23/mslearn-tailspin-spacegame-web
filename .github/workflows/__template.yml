@@ -22,5 +22,11 @@ jobs:
        env:
          ACA_DB_USERNAME: ${{ secrets.ACA_DB_USERNAME }}
          ACA_DB_PASSWORD: ${{ secrets.ACA_DB_PASSWORD }}
+     - name: upload terraform plan
+       uses: actions/upload-artifact@v2
+       with:
+        name: file
+        path: ${{ github.workspace }}/Tailspin.SpaceGame.Web/plan.out
+
      - name: amp cli login
        run: echo "Hello World"
