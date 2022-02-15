@@ -13,7 +13,7 @@ jobs:
        env:
          SSH_KEY: ${{secrets.ACA_DB_USERNAME}}
          
-     - uses: azure/login@v1
+     - uses: Azure/login@v1.4.3
        with:
          creds: '${{ secrets.AZURE_CREDENTIALS }}'
          
