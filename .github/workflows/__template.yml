@@ -12,16 +12,18 @@ jobs:
        shell: bash
        env:
          SSH_KEY: ${{secrets.ACA_DB_USERNAME}}
-
+         
+     - uses: azure/login@v1
+       with:
+         creds: '${{ secrets.AZURE_CREDENTIALS }}'
+         
      - name: nuget-token-replacement
        uses: cschleiden/replace-tokens@v1.1        
        with:
          tokenPrefix: '{{'
          tokenSuffix: '}}'
          files: '["Tailspin.SpaceGame.Web/vars-test.tfvars"]'
-       env:
-         ACA_DB_USERNAME: ${{ secrets.ACA_DB_USERNAME }}
-         ACA_DB_PASSWORD: ${{ secrets.ACA_DB_PASSWORD }}
+
      - name: upload terraform plan
        uses: actions/upload-artifact@v2
        with:
