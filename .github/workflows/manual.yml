@@ -15,5 +15,13 @@ on:
   workflow_dispatch:
 
 jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "$SSH_KEY" > key'
+        shell: bash
+        env:
+          SSH_KEY: ${{secrets.ACA_DB_USERNAME}}
+
   greet:
-    uses: prashant-gupta23/mslearn-tailspin-spacegame-web/.github/workflows/__template.yml@main
+    uses: ./.github/workflows/__template.yml
