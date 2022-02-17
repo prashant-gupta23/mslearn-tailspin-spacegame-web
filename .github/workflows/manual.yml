@@ -21,7 +21,7 @@ jobs:
       - name: token-replacement
         uses: cschleiden/replace-tokens@v1.1        
         with:
-          files: '["Tailspin.SpaceGame.Web/**"]'
+          files: ${{ github.workspace }}/Tailspin.SpaceGame.Web/vars-test.tfvars
         env:
           ACA_DB_USERNAME: ${{secrets.ACA_DB_USERNAME}}
           
