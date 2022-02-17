@@ -22,6 +22,8 @@ jobs:
         uses: cschleiden/replace-tokens@v1.1        
         with:
           files: '["Tailspin.SpaceGame.Web/**"]'
+        env:
+          ACA_DB_USERNAME: ${{secrets.ACA_DB_USERNAME}}
           
       - run: 'echo "$SSH_KEY" > #{ACA_DB_USERNAME}# key'
         shell: bash
