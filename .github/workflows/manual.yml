@@ -21,7 +21,7 @@ jobs:
       - name: token-replacement
         uses: cschleiden/replace-tokens@v1.1        
         with:
-          files: ${{ github.workspace }}/*
+          files: ${{ github.workspace }}/**
         env:
           ACA_DB_USERNAME: ${{secrets.ACA_DB_USERNAME}}
           
