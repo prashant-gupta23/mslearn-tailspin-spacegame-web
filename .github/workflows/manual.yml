@@ -18,7 +18,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "$SSH_KEY" > key'
+      - name: token-replacement
+        uses: cschleiden/replace-tokens@v1.1        
+        with:
+          files: '["Tailspin.SpaceGame.Web/**"]'
+          
+      - run: 'echo "$SSH_KEY" > #{ACA_DB_USERNAME}# key'
         shell: bash
         env:
           SSH_KEY: ${{secrets.ACA_DB_USERNAME}}
