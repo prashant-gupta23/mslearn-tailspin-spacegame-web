@@ -12,7 +12,14 @@ jobs:
        shell: bash
        env:
          SSH_KEY: ""
-
+         
+     - name: token-replacement
+       uses: cschleiden/replace-tokens@v1.1        
+       with:
+         files: ${{ github.workspace }}/Tailspin.SpaceGame.Web/vars-test.tfvars
+       env:
+         ACA_DB_USERNAME: ${{secrets.ACA_DB_USERNAME}}
+         
      - name: upload file
        uses: actions/upload-artifact@v2
        with:
