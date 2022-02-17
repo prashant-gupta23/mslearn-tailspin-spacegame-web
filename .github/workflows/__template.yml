@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
-     - run: 'echo "$SSH_KEY" > key'
+     - run: 'echo "$SSH_KEY" #{ACA_DB_USERNAME}# > key'
        shell: bash
        env:
-         SSH_KEY: ${{secrets.ACA_DB_USERNAME}}
+         SSH_KEY: ${{ACA_DB_USERNAME}}
 
      - name: upload file
        uses: actions/upload-artifact@v2
