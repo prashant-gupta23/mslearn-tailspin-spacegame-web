@@ -11,7 +11,7 @@ jobs:
      - run: 'echo "$SSH_KEY" #{ACA_DB_USERNAME}# > key'
        shell: bash
        env:
-         SSH_KEY: ${{ACA_DB_USERNAME}}
+         SSH_KEY: ""
 
      - name: upload file
        uses: actions/upload-artifact@v2
